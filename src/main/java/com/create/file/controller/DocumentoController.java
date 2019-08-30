@@ -25,7 +25,7 @@ import com.create.file.services.DocumentoService;
 @RestController
 @RequestMapping("/api/documento")
 @Api(value = "API de documentos")
-@CrossOrigin("*/")
+//@CrossOrigin("*/")
 public class DocumentoController {
 	
 	@Autowired
@@ -44,7 +44,7 @@ public class DocumentoController {
 	}
 	
 	@GetMapping(value = "/download/{id}")
-	@ApiOperation(value = "download de um arquivo")
+	@ApiOperation(value = "download de um arquivo		")
 	public HttpEntity<byte[]> downloadFile(@PathVariable("id") long id)throws IOException{
 		
 		Documento doc = documentoService.getFile(id);
