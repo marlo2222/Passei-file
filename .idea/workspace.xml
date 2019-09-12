@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd580dd5-c3d3-4b48-99d5-deae682b2433" name="Default Changelist" comment="">
+    <list default="true" id="fd580dd5-c3d3-4b48-99d5-deae682b2433" name="Default Changelist" comment="adicionando novo modelo a rota">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/create/file/configuration/FileStorageProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/create/file/exception/FileStorageException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/create/file/exception/MyFileNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/create/file/services/FileStorageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/configuration/DocumentServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/configuration/DocumentStoragePropaty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/FileApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/FileApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/controller/DocumentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/controller/DocumentoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/model/Documento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/model/Documento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/repository/DocumentoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/repository/DocumentoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/services/DocumentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/services/DocumentoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-prod.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/FileApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/FileApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/configuration/DocumentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/configuration/DocumentStoragePropaty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/configuration/SwaggerConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/configuration/SwaggerConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/controller/DocumentoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/controller/DocumentoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/model/Documento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/model/Documento.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/repository/DocumentoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/repository/DocumentoRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/services/DocumentoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/services/DocumentoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/create/file/FileApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/create/file/FileApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,8 +89,18 @@
       <workItem from="1567966859263" duration="476000" />
       <workItem from="1568293778051" duration="5397000" />
       <workItem from="1568302919966" duration="54000" />
-      <workItem from="1568316079156" duration="124000" />
+      <workItem from="1568316079156" duration="1149000" />
+      <workItem from="1568321146723" duration="4396000" />
+      <workItem from="1568326842576" duration="3097000" />
     </task>
+    <task id="LOCAL-00001" summary="correçoes no modelo">
+      <created>1568316234448</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568316234448</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,5 +118,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="correçoes no modelo" />
+    <MESSAGE value="adicionando novo modelo a rota" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicionando novo modelo a rota" />
   </component>
 </project>

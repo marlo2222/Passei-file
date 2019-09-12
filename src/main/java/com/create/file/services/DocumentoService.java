@@ -1,19 +1,18 @@
 package com.create.file.services;
 
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
+;
 
 import com.create.file.model.Documento;
 import com.create.file.repository.DocumentoRepository;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 @Service
 public class DocumentoService {
@@ -21,9 +20,15 @@ public class DocumentoService {
 	@Autowired
 	DocumentoRepository documentoRepository;
 
-	RestTemplate rest;
+	@Autowired
+	FileStorageService fileStorageService;
 
-	private String url = "http://localhost:8085/uploadFile";
+	/*public ResponseEntity<?> adicionar(Documento documento){
+		documentoRepository.save(documento);
+		return new ResponseEntity<>("Deu certo", HttpStatus.CREATED);
+	}*/
+
+
 	@Transactional
 	public ResponseEntity<?> addDocumentos(MultipartFile[] file) throws NoSuchAlgorithmException, IOException {
 		for (MultipartFile multipartFile : file) {
@@ -37,14 +42,18 @@ public class DocumentoService {
 		doc.setFileName(multipartFile.getOriginalFilename());
 		doc.setFiletype(multipartFile.getContentType());
 		doc.setSize(multipartFile.getSize());
-		//doc.setHash();
 		doc.setFileDownloadUri();
 		//salvarDocumento(multipartFile, doc.getHash());
 		documentoRepository.save(doc);
-		submit(multipartFile);
+		fileStorageService.create(multipartFile);
+		//submit(multipartFile);
 	}
 
-	private void submit(MultipartFile file){
+	public Resource download(String filename){
+		return fileStorageService.loadFileAsResource(filename);
+	}
+
+	/*private void submit(MultipartFile file){
 		rest = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.MULTIPART_FORM_DATA);
@@ -55,5 +64,5 @@ public class DocumentoService {
 	}
 	public Documento getFile(long id){
 		return documentoRepository.findById(id);
-	}
+	}*/
 }

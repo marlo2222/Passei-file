@@ -116,7 +116,7 @@ public class Documento {
 	public void setFileDownloadUri() {
 		this.fileDownloadUri = ServletUriComponentsBuilder
 								.fromCurrentContextPath()
-								.path("/api/documento/download/")
+								.path("/api/downloadFile/")
 								.path(this.fileName)
 								.toUriString();
 	}

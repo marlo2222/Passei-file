@@ -1,6 +1,10 @@
 /home/marlo/Documents/trabalho/file/src/main/java/com/create/file/services/DocumentoService.java
+/home/marlo/Documents/trabalho/file/src/main/java/com/create/file/services/FileStorageService.java
+/home/marlo/Documents/trabalho/file/src/main/java/com/create/file/exception/MyFileNotFoundException.java
 /home/marlo/Documents/trabalho/file/src/main/java/com/create/file/FileApplication.java
+/home/marlo/Documents/trabalho/file/src/main/java/com/create/file/configuration/FileStorageProperties.java
 /home/marlo/Documents/trabalho/file/src/main/java/com/create/file/controller/DocumentoController.java
 /home/marlo/Documents/trabalho/file/src/main/java/com/create/file/configuration/SwaggerConfiguration.java
+/home/marlo/Documents/trabalho/file/src/main/java/com/create/file/exception/FileStorageException.java
 /home/marlo/Documents/trabalho/file/src/main/java/com/create/file/model/Documento.java
 /home/marlo/Documents/trabalho/file/src/main/java/com/create/file/repository/DocumentoRepository.java

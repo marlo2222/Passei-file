@@ -1,26 +1,23 @@
 package com.create.file.controller;
 
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-
-import javax.annotation.Resource;
-
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.create.file.model.Documento;
 import com.create.file.repository.DocumentoRepository;
 import com.create.file.services.DocumentoService;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 @RestController
-@RequestMapping("/api/documento")
+@RequestMapping("/api/")
 @Api(value = "API de documentos")
 public class DocumentoController {
 	
@@ -35,10 +32,10 @@ public class DocumentoController {
 		return "/swagger-ui.html#!/";
 	}
 	
-	@RequestMapping(value = "/add",method = RequestMethod.POST)
+	@RequestMapping(value = "documento/adicionar",method = RequestMethod.POST)
 	@ApiOperation(value = "Recebe um ou varios arquivos")
-	public ResponseEntity<?> addDocumento(@RequestBody Documento documento){
-		return documentoService.addDocumentos(documento);
+	public ResponseEntity<?> addDocumento(@RequestParam("documento")MultipartFile[] file) throws IOException, NoSuchAlgorithmException {
+		return documentoService.addDocumentos(file);
 	}
 
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)
@@ -46,6 +43,29 @@ public class DocumentoController {
 	public ResponseEntity<?> listar(){
 		return new ResponseEntity<>(documentoRepository.findAll(), HttpStatus.OK);
 
+	}
+
+	@GetMapping("/downloadFile/{fileName:.+}")
+	public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
+		// Load file as Resource
+		Resource resource = documentoService.download(fileName);
+
+		// Try to determine file's content type
+		String contentType = null;
+		try {
+			contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
+		} catch (IOException ex) {
+		}
+
+		// Fallback to the default content type if type could not be determined
+		if(contentType == null) {
+			contentType = "application/octet-stream";
+		}
+
+		return ResponseEntity.ok()
+				.contentType(MediaType.parseMediaType(contentType))
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+				.body(resource);
 	}
 	
 /*	@GetMapping(value = "/download/{id}")

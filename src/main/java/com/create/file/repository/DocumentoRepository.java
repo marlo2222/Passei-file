@@ -8,5 +8,5 @@ import com.create.file.model.Documento;
 @Repository
 public interface DocumentoRepository extends JpaRepository<Documento, Long> {
 	//Documento findByHash(String hash);
-	Documento findById(long id);
+	//Documento findById(long id);
 }
