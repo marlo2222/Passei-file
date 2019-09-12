@@ -1,33 +1,28 @@
 package com.create.file.model;
 
-import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
+
 import javax.persistence.Table;
 
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@Table(name = "documento")
 public class Documento {
 	
 	@Id
@@ -36,24 +31,24 @@ public class Documento {
 	private long id;
 	
 	@Column(name = "nome")
-	private String 	nome;
+	private String fileName;
 	
 	@Column(name = "tipo")
-	private String tipoArquivo;
+	private String filetype;
 	
 	@Column(name = "size")
 	private long size = 0;
 	
 	@Column(name = "link")
-	private String linkDownload;
-		
-	@Column(name = "hash", nullable = false, unique = true)
+	private String fileDownloadUri;
+
+	/*@Column(name = "hash", nullable = false, unique = true)
 	private String hash;
-		
+	*/
 
 
 
-	public static final int RADIX = 16;
+	/*public static final int RADIX = 16;
 
 	public long getId() {
 		return id;
@@ -101,8 +96,8 @@ public class Documento {
 	public void setSize(long size) {
 		this.size = size;
 	}
-
-	public void setHash() throws NoSuchAlgorithmException {
+*/
+	/*public void setHash() throws NoSuchAlgorithmException {
 		String hashName = new StringBuilder()
 				.append(this.nome)
 				.append(this.tipoArquivo)
@@ -111,18 +106,18 @@ public class Documento {
 		MessageDigest messageDigest = MessageDigest.getInstance("MD5");
 		messageDigest.update(hashName.getBytes(StandardCharsets.UTF_8));
 		this.hash = new BigInteger(1, messageDigest.digest()).toString(RADIX);
+	}*/
+
+
+	public String getFileDownloadUri() {
+		return fileDownloadUri;
 	}
 
-
-	public String getLinkDownload() {
-		return linkDownload;
-	}
-
-	public void setLinkDownload() {
-		this.linkDownload = ServletUriComponentsBuilder
+	public void setFileDownloadUri() {
+		this.fileDownloadUri = ServletUriComponentsBuilder
 								.fromCurrentContextPath()
 								.path("/api/documento/download/")
-								.path(this.hash)
+								.path(this.fileName)
 								.toUriString();
 	}
 	

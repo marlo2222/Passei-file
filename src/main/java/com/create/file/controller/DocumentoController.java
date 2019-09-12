@@ -11,10 +11,7 @@ import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,22 +22,30 @@ import com.create.file.services.DocumentoService;
 @RestController
 @RequestMapping("/api/documento")
 @Api(value = "API de documentos")
-//@CrossOrigin("*/")
 public class DocumentoController {
 	
 	@Autowired
 	DocumentoService documentoService;
+
+	@Autowired
+	DocumentoRepository documentoRepository;
 
 	@GetMapping("/")
 	public String home(){
 		return "/swagger-ui.html#!/";
 	}
 	
-	@RequestMapping(value = "/add",method = RequestMethod.POST, consumes = "multipart/form-data")
+	@RequestMapping(value = "/add",method = RequestMethod.POST)
 	@ApiOperation(value = "Recebe um ou varios arquivos")
-	public void addDocumento(@RequestParam("documento") MultipartFile[] multipartFiles) throws NoSuchAlgorithmException, IOException {
-		
-		documentoService.addDocumentos(multipartFiles);
+	public ResponseEntity<?> addDocumento(@RequestBody Documento documento){
+		return documentoService.addDocumentos(documento);
+	}
+
+	@RequestMapping(value = "/listar", method = RequestMethod.GET)
+	@ApiOperation(value = "retorna todos os arquivos")
+	public ResponseEntity<?> listar(){
+		return new ResponseEntity<>(documentoRepository.findAll(), HttpStatus.OK);
+
 	}
 	
 /*	@GetMapping(value = "/download/{id}")
