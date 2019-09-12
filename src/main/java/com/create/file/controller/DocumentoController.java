@@ -38,18 +38,17 @@ public class DocumentoController {
 	
 	@RequestMapping(value = "/add",method = RequestMethod.POST, consumes = "multipart/form-data")
 	@ApiOperation(value = "Recebe um ou varios arquivos")
-	public void addDocumento(@RequestParam("documento") MultipartFile[] multipartFiles) throws NoSuchAlgorithmException{
+	public void addDocumento(@RequestParam("documento") MultipartFile[] multipartFiles) throws NoSuchAlgorithmException, IOException {
 		
 		documentoService.addDocumentos(multipartFiles);
 	}
 	
-	@GetMapping(value = "/download/{id}")
+/*	@GetMapping(value = "/download/{id}")
 	@ApiOperation(value = "download de um arquivo		")
 	public HttpEntity<byte[]> downloadFile(@PathVariable("id") long id)throws IOException{
 		
 		Documento doc = documentoService.getFile(id);
-		
-		byte[] arquivo = doc.getData();
+
 		
 		HttpHeaders header = new HttpHeaders();
 		
@@ -58,5 +57,5 @@ public class DocumentoController {
 		HttpEntity<byte[]> entity = new HttpEntity<byte[]>( arquivo, header);
 		
 		return entity;
-	}
+	}*/
 }

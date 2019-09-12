@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580dd5-c3d3-4b48-99d5-deae682b2433" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/create/file/configuration/DocumentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/create/file/configuration/DocumentStoragePropaty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/controller/DocumentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/controller/DocumentoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/model/Documento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/model/Documento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/services/DocumentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/services/DocumentoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-prod.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/FileApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/FileApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/configuration/SwaggerConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/configuration/SwaggerConfiguration.class" afterDir="false" />
@@ -76,6 +84,9 @@
       <updated>1567122538523</updated>
       <workItem from="1567122544063" duration="949000" />
       <workItem from="1567176548415" duration="953000" />
+      <workItem from="1567202002190" duration="50000" />
+      <workItem from="1567444322922" duration="2815000" />
+      <workItem from="1567966859263" duration="476000" />
     </task>
     <servers />
   </component>
@@ -87,7 +98,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -50,20 +50,7 @@ public class Documento {
 	@Column(name = "hash", nullable = false, unique = true)
 	private String hash;
 		
-	@Lob
-	@Column(name = "data", columnDefinition="LONGBLOB")
-	private byte[] data;
-	
 
-	public byte[] getData() {
-		return data;
-	}
-
-
-	public void setData(byte[] data) {
-		this.data = new byte[data.length];
-		this.data = data;
-	}
 
 
 	public static final int RADIX = 16;
