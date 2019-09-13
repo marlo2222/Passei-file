@@ -1,21 +1,20 @@
 package com.create.file.model;
 
-
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -42,72 +41,26 @@ public class Documento {
 	@Column(name = "link")
 	private String fileDownloadUri;
 
-	/*@Column(name = "hash", nullable = false, unique = true)
+	@Column(name = "hash", nullable = false, unique = true)
 	private String hash;
-	*/
 
+	@Column(name = "dataInserido")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date data;
 
+	public static final int RADIX = 16;
 
-	/*public static final int RADIX = 16;
-
-	public long getId() {
-		return id;
-	}
-
-
-	public String getNome() {
-		return nome;
-	}
-
-
-	public String getTipoArquivo() {
-		return tipoArquivo;
-	}
-
-
-	public long getSize() {
-		return size;
-	}
-
-
-	public static int getRadix() {
-		return RADIX;
-	}
-	
-
-	public String getHash() {
-		return hash;
-	}
-	
-	public void setId(long id) {
-		this.id = id;
-	}
-
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-
-	public void setTipoArquivo(String tipoArquivo) {
-		this.tipoArquivo = tipoArquivo;
-	}
-
-	public void setSize(long size) {
-		this.size = size;
-	}
-*/
-	/*public void setHash() throws NoSuchAlgorithmException {
+	public void setHash() throws NoSuchAlgorithmException {
 		String hashName = new StringBuilder()
-				.append(this.nome)
-				.append(this.tipoArquivo)
+				.append(this.fileName)
+				.append(this.filetype)
 				.append(this.size)
 				.append(new Date().getTime()).toString();
 		MessageDigest messageDigest = MessageDigest.getInstance("MD5");
 		messageDigest.update(hashName.getBytes(StandardCharsets.UTF_8));
 		this.hash = new BigInteger(1, messageDigest.digest()).toString(RADIX);
-	}*/
-
+	}
 
 	public String getFileDownloadUri() {
 		return fileDownloadUri;

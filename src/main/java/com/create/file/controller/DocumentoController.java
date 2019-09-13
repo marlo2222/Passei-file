@@ -7,7 +7,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import com.create.file.model.Documento;
 import com.create.file.repository.DocumentoRepository;
 import com.create.file.services.DocumentoService;
 import org.springframework.web.multipart.MultipartFile;
@@ -67,20 +66,4 @@ public class DocumentoController {
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
 				.body(resource);
 	}
-	
-/*	@GetMapping(value = "/download/{id}")
-	@ApiOperation(value = "download de um arquivo		")
-	public HttpEntity<byte[]> downloadFile(@PathVariable("id") long id)throws IOException{
-		
-		Documento doc = documentoService.getFile(id);
-
-		
-		HttpHeaders header = new HttpHeaders();
-		
-		header.add("Content-Disposition", "attachment;filename=\""+ doc.getNome() +"\"");
-		
-		HttpEntity<byte[]> entity = new HttpEntity<byte[]>( arquivo, header);
-		
-		return entity;
-	}*/
 }
