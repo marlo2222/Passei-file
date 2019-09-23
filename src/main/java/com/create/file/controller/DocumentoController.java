@@ -66,4 +66,10 @@ public class DocumentoController {
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
 				.body(resource);
 	}
+
+	@DeleteMapping("delete/{id}")
+	@ApiOperation(value = "deletar um arquivo")
+	public ResponseEntity<?> deleteFile(@PathVariable("id") long id) throws IOException{
+		return documentoService.delete(id);
+	}
 }

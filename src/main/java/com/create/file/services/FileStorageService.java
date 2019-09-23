@@ -3,6 +3,7 @@ package com.create.file.services;
 import com.create.file.configuration.FileStorageProperties;
 import com.create.file.exception.FileStorageException;
 import com.create.file.exception.MyFileNotFoundException;
+import com.create.file.model.Documento;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
@@ -69,5 +71,10 @@ public class FileStorageService {
 
     public void create(MultipartFile file){
         storeFile(file);
+    }
+
+    public void delete(Documento documento) throws IOException {
+        Path filePath = this.fileStorageLocation.resolve(documento.getFileName()).normalize();
+        Files.delete(filePath);
     }
 }

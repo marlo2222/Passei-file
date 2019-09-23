@@ -11,6 +11,7 @@ import com.create.file.repository.DocumentoRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
@@ -44,5 +45,15 @@ public class DocumentoService {
 
 	public Resource download(String filename){
 		return fileStorageService.loadFileAsResource(filename);
+	}
+
+	public ResponseEntity<?> delete(long id) throws IOException {
+		Documento documento = documentoRepository.getOne(id);
+		if (documento == null){
+			return new ResponseEntity<>("Não foi encontrado nada", HttpStatus.NOT_FOUND);
+		}
+		documentoRepository.delete(documento);
+		fileStorageService.delete(documento);
+		return new ResponseEntity<>("Removido com sucesso", HttpStatus.OK);
 	}
 }
