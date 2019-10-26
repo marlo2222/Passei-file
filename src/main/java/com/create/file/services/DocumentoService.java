@@ -30,7 +30,7 @@ public class DocumentoService {
 		}
 		return new ResponseEntity<>("Adicionado com sucesso", HttpStatus.ACCEPTED);
 	}
-	private void create(long tipo, MultipartFile multipartFile) throws NoSuchAlgorithmException {
+	private void create(String tipo, MultipartFile multipartFile) throws NoSuchAlgorithmException {
 		Documento doc = new Documento();
 		doc.setFileName(multipartFile.getOriginalFilename());
 		doc.setFiletype(multipartFile.getContentType());
