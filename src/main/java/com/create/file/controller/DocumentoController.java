@@ -34,6 +34,8 @@ public class DocumentoController {
 	@RequestMapping(value = "documento/adicionar/",method = RequestMethod.POST)
 	@ApiOperation(value = "Recebe um ou varios arquivos")
 	public ResponseEntity<?> addDocumento(@RequestParam("arquivo")MultipartFile[] file) throws IOException, NoSuchAlgorithmException {
+		System.out.println("File Name: " + file.getOriginalFilename());
+        System.out.println("File Content Type: " + file.getContentType());
 		return documentoService.addDocumentos(file);
 	}
 
