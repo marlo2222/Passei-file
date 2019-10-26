@@ -24,7 +24,7 @@ public class DocumentoService {
 	FileStorageService fileStorageService;
 
 	@Transactional
-	public ResponseEntity<?> addDocumentos(String titulo, int tipo, MultipartFile[] file) throws NoSuchAlgorithmException {
+	public ResponseEntity<?> addDocumentos(String titulo, long tipo, MultipartFile[] file) throws NoSuchAlgorithmException {
 		for (MultipartFile multipartFile : file) {
 			System.out.println("File Name: " + multipartFile.getOriginalFilename());
         	System.out.println("File Content Type: " + multipartFile.getContentType());
@@ -32,7 +32,7 @@ public class DocumentoService {
 		}
 		return new ResponseEntity<>("Adicionado com sucesso", HttpStatus.ACCEPTED);
 	}
-	private void create(String titulo, int tipo, MultipartFile multipartFile) throws NoSuchAlgorithmException {
+	private void create(String titulo, long tipo, MultipartFile multipartFile) throws NoSuchAlgorithmException {
 		Documento doc = new Documento();
 		doc.setFileName(multipartFile.getOriginalFilename());
 		doc.setFiletype(multipartFile.getContentType());

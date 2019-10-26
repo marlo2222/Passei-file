@@ -50,7 +50,7 @@ public class Documento {
 	private Date data;
 
 	@Column(name = "tipo_documento")
-	private int tipo;
+	private long tipo;
 
 	@Column(name = "titulo_documento", length = 50)
 	private String titulo;
