@@ -49,6 +49,9 @@ public class Documento {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date data;
 
+	@Column(name = "tipo")
+	private long tipo;
+
 	public static final int RADIX = 16;
 
 	public void setHash() throws NoSuchAlgorithmException {
