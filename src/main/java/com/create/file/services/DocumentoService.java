@@ -26,6 +26,8 @@ public class DocumentoService {
 	@Transactional
 	public ResponseEntity<?> addDocumentos(MultipartFile[] file) throws NoSuchAlgorithmException {
 		for (MultipartFile multipartFile : file) {
+			System.out.println("File Name: " + multipartFile.getOriginalFilename());
+        	System.out.println("File Content Type: " + multipartFile.getContentType());
 			create(multipartFile);
 		}
 		return new ResponseEntity<>("Adicionado com sucesso", HttpStatus.ACCEPTED);
