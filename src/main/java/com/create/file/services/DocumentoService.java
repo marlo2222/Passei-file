@@ -24,7 +24,7 @@ public class DocumentoService {
 	FileStorageService fileStorageService;
 
 	@Transactional
-	public ResponseEntity<?> addDocumentos(long tipo, MultipartFile[] file) throws NoSuchAlgorithmException {
+	public ResponseEntity<?> addDocumentos(String tipo, MultipartFile[] file) throws NoSuchAlgorithmException {
 		for (MultipartFile multipartFile : file) {
 			create(tipo, multipartFile);
 		}

@@ -50,7 +50,7 @@ public class Documento {
 	private Date data;
 
 	@Column(name = "tipo_documento")
-	private long tipo;
+	private String tipo;
 
 	public static final int RADIX = 16;
 
