@@ -49,7 +49,7 @@ public class Documento {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date data;
 
-	@Column(name = "tipo")
+	@Column(name = "tipo_documento")
 	private long tipo;
 
 	public static final int RADIX = 16;
