@@ -23,16 +23,20 @@ public class DocumentoService {
 	@Autowired
 	FileStorageService fileStorageService;
 
+	public ResponseEntity<?> listarDocumentosUsuario(long id){
+		return new ResponseEntity<>(documentoRepository.findAllByIdUsuario(id), HttpStatus.OK);
+	}
+
 	@Transactional
-	public ResponseEntity<?> addDocumentos(String titulo, long tipo, MultipartFile[] file) throws NoSuchAlgorithmException {
+	public ResponseEntity<?> addDocumentos(long usuario, String titulo, long tipo, MultipartFile[] file) throws NoSuchAlgorithmException {
 		for (MultipartFile multipartFile : file) {
 			System.out.println("File Name: " + multipartFile.getOriginalFilename());
         	System.out.println("File Content Type: " + multipartFile.getContentType());
-			create(titulo, tipo, multipartFile);
+			create(usuario, titulo, tipo, multipartFile);
 		}
 		return new ResponseEntity<>("Adicionado com sucesso", HttpStatus.ACCEPTED);
 	}
-	private void create(String titulo, long tipo, MultipartFile multipartFile) throws NoSuchAlgorithmException {
+	private void create(long usuario, String titulo, long tipo, MultipartFile multipartFile) throws NoSuchAlgorithmException {
 		Documento doc = new Documento();
 		doc.setFileName(multipartFile.getOriginalFilename());
 		doc.setFiletype(multipartFile.getContentType());

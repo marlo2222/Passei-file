@@ -52,8 +52,12 @@ public class Documento {
 	@Column(name = "tipo_documento")
 	private long tipo;
 
-	@Column(name = "titulo_documento", length = 50)
+	@Column(name = "titulo_documento", length = 100)
 	private String titulo;
+
+	@Column(name = "idUsuario", nullable = false)
+	private long idUsuario;
+
 
 	public static final int RADIX = 16;
 
