@@ -58,6 +58,8 @@ public class Documento {
 	@Column(name = "idUsuario", nullable = false)
 	private long idUsuario;
 
+	@Column(name = "idDisciplina", nullable = false)
+	private long idDisciplina;
 
 	public static final int RADIX = 16;
 
