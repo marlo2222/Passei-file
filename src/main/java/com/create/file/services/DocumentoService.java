@@ -65,4 +65,11 @@ public class DocumentoService {
 		fileStorageService.delete(documento);
 		return new ResponseEntity<>("Removido com sucesso", HttpStatus.OK);
 	}
+
+	public ResponseEntity<?> countFiles(long id){
+		long quantidade = documentoRepository.countByIdUsuario(id);
+		if (quantidade <= 0)
+			return new ResponseEntity<>(quantidade, HttpStatus.NO_CONTENT);
+		return new ResponseEntity<>(quantidade, HttpStatus.OK);
+	}
 }

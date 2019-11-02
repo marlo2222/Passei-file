@@ -79,4 +79,10 @@ public class DocumentoController {
 	public ResponseEntity<?> deleteFile(@PathVariable("id") long id) throws IOException{
 		return documentoService.delete(id);
 	}
+	
+	@GetMapping("count/{id}")
+	@ApiOperation(value = "quantidade de arquivos de um usuarios")
+	public ResponseEntity<?> countFilesUser(@PathVariable("id") long id){
+		return documentoService.countFiles(id);
+	}
 }

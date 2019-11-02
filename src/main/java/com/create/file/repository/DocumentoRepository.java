@@ -13,7 +13,11 @@ import com.create.file.model.Documento;
 public interface DocumentoRepository extends JpaRepository<Documento, Long> {
 
 	@Query("SELECT f FROM Documento f WHERE f.idUsuario = :idPassado")
-    List<Documento> findAllByIdUsuario(@Param("idPassado") long id);
+	List<Documento> findAllByIdUsuario(@Param("idPassado") long id);
+
+	Long countByIdUsuario(long idUsuario);
+	
+
 	//Documento findByHash(String hash);
 	//Documento findById(long id);
 }
