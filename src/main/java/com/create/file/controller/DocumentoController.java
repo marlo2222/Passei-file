@@ -34,8 +34,8 @@ public class DocumentoController {
 	@RequestMapping(value = "documento/adicionar/",method = RequestMethod.POST)
 	@ApiOperation(value = "Recebe um ou varios arquivos")
 	public ResponseEntity<?> addDocumento(@RequestParam("usuario") long usuario,@RequestParam("disciplina") long disciplina,
-	 @RequestParam("titulo") String titulo, @RequestParam("tipo") int tipo, @RequestParam("arquivo")MultipartFile[] file) throws IOException, NoSuchAlgorithmException {
-		return documentoService.addDocumentos(usuario, disciplina, titulo, tipo, file);
+	 @RequestParam("titulo") String titulo,@RequestParam("descricao") String descricao, @RequestParam("tipo") int tipo, @RequestParam("arquivo")MultipartFile[] file) throws IOException, NoSuchAlgorithmException {
+		return documentoService.addDocumentos(usuario, disciplina, titulo, descricao, tipo, file);
 	}
 
 	@RequestMapping(value = "/listar/usuario/{id}", method = RequestMethod.GET)

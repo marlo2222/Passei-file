@@ -55,6 +55,9 @@ public class Documento {
 	@Column(name = "titulo_documento", length = 100)
 	private String titulo;
 
+	@Column(name = "descricao", nullable = false, length = 250)
+	private String descricao;
+
 	@Column(name = "idUsuario", nullable = false)
 	private long idUsuario;
 

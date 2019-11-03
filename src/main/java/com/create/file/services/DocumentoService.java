@@ -28,15 +28,15 @@ public class DocumentoService {
 	}
 
 	@Transactional
-	public ResponseEntity<?> addDocumentos(long usuario, long disciplina, String titulo, long tipo, MultipartFile[] file) throws NoSuchAlgorithmException {
+	public ResponseEntity<?> addDocumentos(long usuario, long disciplina, String titulo, String descricao, long tipo, MultipartFile[] file) throws NoSuchAlgorithmException {
 		for (MultipartFile multipartFile : file) {
 			System.out.println("File Name: " + multipartFile.getOriginalFilename());
         	System.out.println("File Content Type: " + multipartFile.getContentType());
-			create(usuario, disciplina, titulo, tipo, multipartFile);
+			create(usuario, disciplina, titulo, descricao, tipo, multipartFile);
 		}
 		return new ResponseEntity<>("Adicionado com sucesso", HttpStatus.ACCEPTED);
 	}
-	private void create(long usuario, long disciplina, String titulo, long tipo, MultipartFile multipartFile) throws NoSuchAlgorithmException {
+	private void create(long usuario, long disciplina, String titulo, String descricao, long tipo, MultipartFile multipartFile) throws NoSuchAlgorithmException {
 		Documento doc = new Documento();
 		doc.setFileName(multipartFile.getOriginalFilename());
 		doc.setFiletype(multipartFile.getContentType());
@@ -46,6 +46,7 @@ public class DocumentoService {
 		doc.setData(new Date());
 		doc.setTipo(tipo);
 		doc.setTitulo(titulo);
+		doc.setDescricao(descricao);
 		doc.setIdUsuario(usuario);
 		doc.setIdDisciplina(disciplina);
 		documentoRepository.save(doc);
