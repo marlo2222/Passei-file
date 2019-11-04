@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class DocumentoService {
@@ -26,6 +27,14 @@ public class DocumentoService {
 	public ResponseEntity<?> listarDocumentosUsuario(long id){
 		return new ResponseEntity<>(documentoRepository.findAllByIdUsuario(id), HttpStatus.OK);
 	}
+
+	public ResponseEntity<?> listarDisciplinaId(long idDisciplina){
+		List<Documento> documentos = documentoRepository.findAllByIdDisciplina(idDisciplina);
+		if (documentos == null)
+			return new ResponseEntity<>(new Documento(), HttpStatus.NO_CONTENT);
+		return new ResponseEntity<>(documentos, HttpStatus.OK);
+	}
+
 
 	@Transactional
 	public ResponseEntity<?> addDocumentos(long usuario, long disciplina, String titulo, String descricao, long tipo, MultipartFile[] file) throws NoSuchAlgorithmException {

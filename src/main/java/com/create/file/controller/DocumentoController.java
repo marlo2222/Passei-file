@@ -85,4 +85,10 @@ public class DocumentoController {
 	public ResponseEntity<?> countFilesUser(@PathVariable("id") long id){
 		return documentoService.countFiles(id);
 	}
+
+	@GetMapping("/listar/disciplina/{id}")
+	@ApiOperation(value = "retorna a diciplina de um curso")
+	public ResponseEntity<?> listarDocumentosDisciplina(@PathVariable("id") long idDisciplina){
+		return documentoService.listarDisciplinaId(idDisciplina);
+	}
 }

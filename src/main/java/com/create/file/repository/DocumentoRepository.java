@@ -16,6 +16,8 @@ public interface DocumentoRepository extends JpaRepository<Documento, Long> {
 	List<Documento> findAllByIdUsuario(@Param("idPassado") long id);
 
 	Long countByIdUsuario(long idUsuario);
+
+	List<Documento> findAllByIdDisciplina(long idDisciplina);
 	
 
 	//Documento findByHash(String hash);
