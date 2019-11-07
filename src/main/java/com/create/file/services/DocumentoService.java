@@ -29,12 +29,12 @@ public class DocumentoService {
 		return new ResponseEntity<>(documentoRepository.findAllByIdUsuario(id), HttpStatus.OK);
 	}
 
-	public ResponseEntity<?> DocuentosFavoritoUsuario(List<Long> ids){
-		List<Documento> lista = new ArrayList<>();
-		for (Long id : ids) {
+	public ArrayList<Documento> DocuentosFavoritoUsuario(long[] ids){
+		ArrayList<Documento> lista = new ArrayList<>();
+		for (long id : ids) {
 			lista.add(documentoRepository.getOne(id));
 		}
-		return new ResponseEntity<>(lista, HttpStatus.OK);
+		return lista;
 	}
 
 	public ResponseEntity<?> listarDisciplinaId(long idDisciplina){
@@ -43,7 +43,9 @@ public class DocumentoService {
 			return new ResponseEntity<>(new Documento(), HttpStatus.NO_CONTENT);
 		return new ResponseEntity<>(documentos, HttpStatus.OK);
 	}
-
+	public ResponseEntity<?> documento(long id){
+		return new ResponseEntity<>(documentoRepository.getOne(id), HttpStatus.OK);
+	}
 
 	@Transactional
 	public ResponseEntity<?> addDocumentos(long usuario, long disciplina, String titulo, String descricao, long tipo, MultipartFile[] file) throws NoSuchAlgorithmException {

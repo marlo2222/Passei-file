@@ -18,6 +18,8 @@ public interface DocumentoRepository extends JpaRepository<Documento, Long> {
 	Long countByIdUsuario(long idUsuario);
 
 	List<Documento> findAllByIdDisciplina(long idDisciplina);
+
+
 	
 
 	//Documento findByHash(String hash);
