@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -26,6 +27,14 @@ public class DocumentoService {
 
 	public ResponseEntity<?> listarDocumentosUsuario(long id){
 		return new ResponseEntity<>(documentoRepository.findAllByIdUsuario(id), HttpStatus.OK);
+	}
+
+	public ResponseEntity<?> DocuentosFavoritoUsuario(List<Long> ids){
+		List<Documento> lista = new ArrayList<>();
+		for (Long id : ids) {
+			lista.add(documentoRepository.getOne(id));
+		}
+		return new ResponseEntity<>(lista, HttpStatus.OK);
 	}
 
 	public ResponseEntity<?> listarDisciplinaId(long idDisciplina){

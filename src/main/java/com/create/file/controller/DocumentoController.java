@@ -90,13 +90,13 @@ public class DocumentoController {
 	}
 
 	@GetMapping("/listar/disciplina/{id}")
-	@ApiOperation(value = "retorna a diciplina de um curso")
+	@ApiOperation(value = "retorna os documentos de uma disciplina")
 	public ResponseEntity<?> listarDocumentosDisciplina(@PathVariable("id") long idDisciplina){
 		return documentoService.listarDisciplinaId(idDisciplina);
 	}
 	@GetMapping("/listar/documentos/favoritos/user")
-	@ApiOperation(value = "retorna a diciplina de um curso")
-	public ResponseEntity<?> listaDocumentosFavoritos(ArrayList<Object> ids){
-		return new ResponseEntity<>(documentoRepository.findAll((Pageable) ids), HttpStatus.OK);
+	@ApiOperation(value = "retorna os documentos favoritos de um usuario")
+	public ResponseEntity<?> listaDocumentosFavoritos(List<Long> ids){
+		return new ResponseEntity<>(documentoService.DocuentosFavoritoUsuario(ids), HttpStatus.OK);
 	}
 }
