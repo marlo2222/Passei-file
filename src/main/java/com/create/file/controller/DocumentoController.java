@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/")
@@ -90,5 +92,10 @@ public class DocumentoController {
 	@ApiOperation(value = "retorna a diciplina de um curso")
 	public ResponseEntity<?> listarDocumentosDisciplina(@PathVariable("id") long idDisciplina){
 		return documentoService.listarDisciplinaId(idDisciplina);
+	}
+	@GetMapping("/listar/documentos/favoritos/user")
+	@ApiOperation(value = "retorna a diciplina de um curso")
+	public ResponseEntity<?> listaDocumentosFavoritos( List<Integer> ids){
+		return new ResponseEntity<>(documentoRepository.findAll((Pageable) ids), HttpStatus.OK);
 	}
 }
