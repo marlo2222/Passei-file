@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -95,7 +96,7 @@ public class DocumentoController {
 	}
 	@GetMapping("/listar/documentos/favoritos/user")
 	@ApiOperation(value = "retorna a diciplina de um curso")
-	public ResponseEntity<?> listaDocumentosFavoritos( List<Integer> ids){
+	public ResponseEntity<?> listaDocumentosFavoritos(ArrayList<Object> ids){
 		return new ResponseEntity<>(documentoRepository.findAll((Pageable) ids), HttpStatus.OK);
 	}
 }
