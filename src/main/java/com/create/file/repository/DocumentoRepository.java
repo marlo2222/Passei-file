@@ -19,7 +19,7 @@ public interface DocumentoRepository extends JpaRepository<Documento, Long> {
 
 	List<Documento> findAllByIdDisciplina(long idDisciplina);
 
-
+    Documento findById(long id);
 	
 
 	//Documento findByHash(String hash);

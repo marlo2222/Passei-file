@@ -94,10 +94,10 @@ public class DocumentoController {
 	public ResponseEntity<?> listarDocumentosDisciplina(@PathVariable("id") long idDisciplina){
 		return documentoService.listarDisciplinaId(idDisciplina);
 	}
-	@GetMapping("/listar/documentos/favoritos/user")
+	@GetMapping("/listar/documentos/favoritos/{id}")
 	@ApiOperation(value = "retorna os documentos favoritos de um usuario")
-	public ResponseEntity<?> listaDocumentosFavoritos(@RequestParam("ids") long[] ids){
-		return new ResponseEntity<>(documentoService.DocuentosFavoritoUsuario(ids), HttpStatus.OK);
+	public ResponseEntity<?> listaDocumentosFavoritos(@PathVariable("id") long id){
+		return new ResponseEntity<>(documentoService.documento(id), HttpStatus.OK);
 	}
 	@GetMapping("/listar/documento/{id}")
 	@ApiOperation(value = "retorna os documentos favoritos de um usuario")

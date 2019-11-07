@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fd580dd5-c3d3-4b48-99d5-deae682b2433" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/controller/DocumentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/controller/DocumentoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/repository/DocumentoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/repository/DocumentoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/services/DocumentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/services/DocumentoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/controller/DocumentoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/controller/DocumentoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/repository/DocumentoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/repository/DocumentoRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/services/DocumentoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/services/DocumentoService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,7 +96,8 @@
       <workItem from="1572871926063" duration="2111000" />
       <workItem from="1572890338717" duration="13000" />
       <workItem from="1573086665257" duration="4225000" />
-      <workItem from="1573142085654" duration="306000" />
+      <workItem from="1573142085654" duration="412000" />
+      <workItem from="1573142742762" duration="162000" />
     </task>
     <task id="LOCAL-00001" summary="correçoes no modelo">
       <created>1568316234448</created>
@@ -139,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573089136179</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="recuperando arquivos de um curso">
+      <created>1573142421347</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1573142421347</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

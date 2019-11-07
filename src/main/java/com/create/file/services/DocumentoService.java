@@ -29,7 +29,7 @@ public class DocumentoService {
 		return new ResponseEntity<>(documentoRepository.findAllByIdUsuario(id), HttpStatus.OK);
 	}
 
-	public ArrayList<Documento> DocuentosFavoritoUsuario(long[] ids){
+	public ArrayList<Documento> DocumentosFavoritoUsuario(long[] ids){
 		ArrayList<Documento> lista = new ArrayList<>();
 		for (long id : ids) {
 			lista.add(documentoRepository.getOne(id));
@@ -44,7 +44,7 @@ public class DocumentoService {
 		return new ResponseEntity<>(documentos, HttpStatus.OK);
 	}
 	public ResponseEntity<?> documento(long id){
-		return new ResponseEntity<>(documentoRepository.getOne(id), HttpStatus.OK);
+		return new ResponseEntity<>(documentoRepository.findById(id), HttpStatus.OK);
 	}
 
 	@Transactional
