@@ -43,8 +43,8 @@ public class DocumentoService {
 			return new ResponseEntity<>(new Documento(), HttpStatus.NO_CONTENT);
 		return new ResponseEntity<>(documentos, HttpStatus.OK);
 	}
-	public ResponseEntity<?> documento(long id){
-		return new ResponseEntity<>(documentoRepository.findById(id), HttpStatus.OK);
+	public Documento documento(long id){
+		return documentoRepository.findById(id);
 	}
 
 	@Transactional
