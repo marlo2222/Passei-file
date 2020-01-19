@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd580dd5-c3d3-4b48-99d5-deae682b2433" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/repository/DocumentoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/repository/DocumentoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/create/file/services/DocumentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/create/file/services/DocumentoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/controller/DocumentoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/controller/DocumentoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/repository/DocumentoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/repository/DocumentoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/create/file/services/DocumentoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/create/file/services/DocumentoService.class" afterDir="false" />
-    </list>
+    <list default="true" id="fd580dd5-c3d3-4b48-99d5-deae682b2433" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +89,7 @@
       <workItem from="1573086665257" duration="4225000" />
       <workItem from="1573142085654" duration="412000" />
       <workItem from="1573142742762" duration="162000" />
+      <workItem from="1573216100418" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="correçoes no modelo">
       <created>1568316234448</created>
